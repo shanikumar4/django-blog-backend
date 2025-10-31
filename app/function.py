@@ -1,0 +1,76 @@
+import re
+
+
+def validate_pass(password):
+    
+    if password is None:
+        return False
+    elif re.match("^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$#%])[A-Za-z\d@$#%]{6,20}$", password):
+        return True
+    else :
+        return False
+     
+     
+def validate_username(username):
+    if username is None:
+        return False
+    elif re.match("^[a-z]+$", username):
+        return True
+    else:
+        return False
+
+def validate_email(email):
+    if email is None:
+        return False
+    
+    elif re.match("[^@\s]+@[^@\s]+\.[^@\s]+", email):
+        return True
+    return False
+
+def firstAndLastName(name):
+    if name is None:
+        return False
+    elif re.match("^[A-Za-z]+$", name):
+        return True
+    else:
+        return False
+    
+    
+def LastName(name):
+    if name is None:
+        return True
+    if re.match("^^[A-Za-z]+$", name):
+        return True
+    else:
+        return False
+
+def validate_phoneNo(no):
+    if no is None:
+        return False
+    elif re.match("^[6-9][0-9]{9}+$", no):
+        return True
+    else:
+        return False
+    
+def validate_dob(dob):
+     if dob is None:
+        return False
+     elif re.match("^(((19|20)([2468][048]|[13579][26]|0[48])|2000)[-]02[-]29|((19|20)[0-9]{2}[-](0[4678]|1[02])[-](0[1-9]|[12][0-9]|30)|(19|20)[0-9]{2}[-](0[1359]|11)[-](0[1-9]|[12][0-9]|3[01])|(19|20)[0-9]{2}[/-]02[-](0[1-9]|1[0-9]|2[0-8])))+$", dob):
+        return True
+     else:
+        return False
+    
+def validate_gender(gender):
+    if gender is None:
+        return False
+    elif re.match("^[0-1]$", gender):
+        return True
+    else:
+        return False
+    
+def validate_add(add):
+    if add is None:
+        return False
+    else:
+        return True
+    
