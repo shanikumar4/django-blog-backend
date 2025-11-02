@@ -39,7 +39,7 @@ def firstAndLastName(name):
 def LastName(name):
     if name is None:
         return True
-    if re.match("^^[A-Za-z]+$", name):
+    if re.match("^[A-Za-z]+$", name):
         return True
     else:
         return False
@@ -61,12 +61,12 @@ def validate_dob(dob):
         return False
     
 def validate_gender(gender):
-    if gender is None:
-        return False
-    elif re.match("^[0-1]$", gender):
-        return True
+    if gender== "MALE":
+        return "M"
+    if gender == "FEMALE":
+        return "F"
     else:
-        return False
+        return None
     
 def validate_add(add):
     if add is None:
@@ -74,3 +74,30 @@ def validate_add(add):
     else:
         return True
     
+def validate_id(id):
+    if id is None or  re.match("^\S+$", id):
+        return False
+    else:
+        return True
+    
+    
+def convert_gender(gender):
+    if gender== "M":
+        return "MALE"
+    if gender == "F":
+        return "FEMALE"
+    else:
+        return None
+    
+
+def blogvalidate(title):
+    if id is None or  re.match("^\S+$", title) and len(title)<=200:
+        return False
+    else:
+        return True
+
+def validate_dis(dis):
+    if id is None or  re.match("^\S+$", dis):
+        return False
+    else:
+        return True
